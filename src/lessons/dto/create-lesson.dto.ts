@@ -1,4 +1,4 @@
-import { IsDecimal, IsNotEmpty, IsString } from "class-validator"
+import { IsDecimal, IsNotEmpty, IsNumber, IsString } from "class-validator"
 
 export class CreateLessonDto {
     @IsNotEmpty()
@@ -14,6 +14,6 @@ export class CreateLessonDto {
     class_level: string    
     
     @IsNotEmpty()
-    @IsDecimal()
+    @IsNumber()
     scheduled_hours: number 
 }
