@@ -11,7 +11,7 @@ export class LessonsService {
   }
 
   async findAll() {
-    return await this.prisma.lessons.findMany({select: {subject: true, teacher: true, class_level: true, scheduled_hours: true}});
+    return await this.prisma.lessons.findMany();
   }
 
   async conducted(id: string) {

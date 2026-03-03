@@ -1,7 +1,6 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Param } from '@nestjs/common';
 import { LessonsService } from './lessons.service';
 import { CreateLessonDto } from './dto/create-lesson.dto';
-import { UpdateLessonDto } from './dto/update-lesson.dto';
 
 @Controller('lessons')
 export class LessonsController {
@@ -13,7 +12,7 @@ export class LessonsController {
   }
 
   @Post(':id/conducted')
-  findOne(@Param('id') id: string) {
+  conducted(@Param('id') id: string) {
     return this.lessonsService.conducted(id);
   }
 
